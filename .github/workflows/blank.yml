@@ -26,8 +26,6 @@ jobs:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           applicationId: 127348941
-          revision: "${{ github.ref }}-${{ github.sha }}"
-
-          changelog: "See https://github.com/${{ github.repository }}/blob/master/CHANGELOG.md for details"
+          revision: "Sidekiq-Cron: ${{ github.ref }}-${{ github.sha }}"
           description: "Aabed's testing mark"
           user: "${{ github.actor }}"
