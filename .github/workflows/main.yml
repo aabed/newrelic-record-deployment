@@ -6,12 +6,12 @@ jobs:
     name: Testing
     steps:
       - name: Testing
-        uses: aabed/newrelic-deployment@main
+        uses: aabed/newrelic-deployment@v1
         with:
           newrelic-license-key: ${{ secrets.NEWRELIC_LICENSE_KEY }}
           newrelic-api-key: ${{ secrets.NEWRELIC_API_KEY }}
           newrelic-application-name: "My Application"
           deployment-description: "Testing"
-          #deployment-revision: "12345"
+          deployment-revision: "v1"
           #deployment-changelog: "Test Change"
           #deployment-user: "Github"
