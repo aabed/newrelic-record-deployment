@@ -22,7 +22,7 @@ inputs:
   deployment-revision:  
     description: 'Deployment Revision'
     required: false
-    default: ${{ env.GITHUB_SHA }}
+    default: 'Unknown'
 
   deployment-changelog:  
     description: 'Deployment Changelog'
