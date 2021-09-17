@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Testing
+    steps:
+      - name: Testing
+        uses: aabed/newrelic-deployment@main
+        with:
+          newrelic-license-key: ${{ secrets.NEWRELIC_LICENSE_KEY }}
+          newrelic-api-key: ${{ secrets.NEWRELIC_API_KEY }}
+          newrelic-application-name: ${{ secrets.NEWRELIC_APPLICATION_NAME }}
+          deployment-description: "Testing"
+          deployment-revision: "12345"
+          deployment-changelog: "Test Change"
+          deployment-user: "Github"

@@ -1,0 +1,46 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  newrelic-license-key:  
+    description: 'Newrelic license key'
+    required: true
+
+  newrelic-api-key:
+    description: 'Newrelic API key'
+    required: true
+
+  newrelic-application-name:
+    description: 'Newrelic Application Name'
+    required: true
+
+  deployment-description:  
+    description: 'Deployment Description'
+    required: true
+    default: 'New deployment by Github Actions'    
+
+  deployment-revision:  
+    description: 'Deployment Revision'
+    required: false
+    default: ${{ env.GITHUB_SHA }}
+
+  deployment-changelog:  
+    description: 'Deployment Changelog'
+    required: false
+    default: '.'
+
+  deployment-user:  
+    description: 'Deployment User'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env: 
+    DEPLOYMENT_DESCRIPTION: ${{ inputs.deployment-description }}
+    DEPLOYMENT_REVISION: ${{ inputs.deployment-revision }}
+    DEPLOYMENT_CHANGELOG: ${{ inputs.changelog }}
+    DEPLOYMENT_USER: ${{ inputs.deployment-user }}
+    NEWRELIC_API_KEY: ${{ inputs.newrelic-api-key }}
+    NEWRELIC_LICENSE_KEY: ${{ inputs.newrelic-license-key }}
+    NEWRELIC_APPLICATION_NAME: ${{ inputs.newrelic-application-name }}
