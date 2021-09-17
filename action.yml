@@ -1,6 +1,10 @@
 # action.yml
 name: 'Record Newrelic Deployment'
 description: 'Adds a newrelic deployment marker to your app'
+branding:
+  icon: 'bookmark'  
+  color: 'green'
+
 inputs:
   newrelic-license-key:  
     description: 'Newrelic license key'
