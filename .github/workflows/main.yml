@@ -10,8 +10,8 @@ jobs:
         with:
           newrelic-license-key: ${{ secrets.NEWRELIC_LICENSE_KEY }}
           newrelic-api-key: ${{ secrets.NEWRELIC_API_KEY }}
-          newrelic-application-name: ${{ secrets.NEWRELIC_APPLICATION_NAME }}
+          newrelic-application-name: "My Application"
           deployment-description: "Testing"
-          deployment-revision: "12345"
-          deployment-changelog: "Test Change"
-          deployment-user: "Github"
+          #deployment-revision: "12345"
+          #deployment-changelog: "Test Change"
+          #deployment-user: "Github"

@@ -1,6 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Record Newrelic Deployment'
+description: 'Adds a newrelic deployment marker to your app'
 inputs:
   newrelic-license-key:  
     description: 'Newrelic license key'
@@ -27,11 +27,12 @@ inputs:
   deployment-changelog:  
     description: 'Deployment Changelog'
     required: false
-    default: '.'
+    default: 'N/A'
 
   deployment-user:  
     description: 'Deployment User'
     required: false
+    default: "Github Actions"
 
 runs:
   using: 'docker'
@@ -39,7 +40,7 @@ runs:
   env: 
     DEPLOYMENT_DESCRIPTION: ${{ inputs.deployment-description }}
     DEPLOYMENT_REVISION: ${{ inputs.deployment-revision }}
-    DEPLOYMENT_CHANGELOG: ${{ inputs.changelog }}
+    DEPLOYMENT_CHANGELOG: ${{ inputs.deployment-changelog }}
     DEPLOYMENT_USER: ${{ inputs.deployment-user }}
     NEWRELIC_API_KEY: ${{ inputs.newrelic-api-key }}
     NEWRELIC_LICENSE_KEY: ${{ inputs.newrelic-license-key }}
